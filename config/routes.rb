@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
  get "home/csv", to: "home#csv"
+ get "home/pdf", to: "home#pdf"
+ 
  resources :home
  root "home#index"
 
