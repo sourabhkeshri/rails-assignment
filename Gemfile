@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker', '~> 1.4', '>= 1.4.3'
 
 gem 'prawn'
+
+gem "letter_opener", :group => :development
+
+

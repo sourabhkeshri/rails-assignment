@@ -1,0 +1,10 @@
+
+<ul>
+	<% User.limit(50).each do |user| %>
+	<li>
+		<strong>Name:</strong><%= user.user_name %><br>
+		<strong>Email:</strong><%= user.user_email %><br>
+		<strong>Phone:</strong><%= user.phone_number %><br>
+	</li>
+	<% end %>
+</ul>
