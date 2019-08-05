@@ -3,8 +3,15 @@ Rails.application.routes.draw do
  get "home/csv", to: "home#csv"
  get "home/pdf", to: "home#pdf"
  get "home/mail_to", to: "home#mail_to"
+
+ # get "users/index"
+ # get "users/show"
+ # get "users/new"
+ # get "users/edit"
+
  
  resources :home
+ resources :users
  root "home#index"
 
 

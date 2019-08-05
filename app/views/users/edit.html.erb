@@ -1,0 +1,8 @@
+<h3>Update User Details</h3>
+<%= form_with model: @user do |form| %>
+  <%= form.text_field :user_name, placeholder: "name.." %>
+  <%= form.text_field :user_email, placeholder: "email.." %>
+ 
+
+  <%= form.submit %>
+<% end %>
