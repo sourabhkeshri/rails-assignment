@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :set_Post, only: [:show, :download]
+	before_action :set_Post, only: [:show, :destroy]
  
   def index
     @posts = Post.order('created_at DESC')
@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    	@post = Post.find(params[:id])
     	@post.destroy
 
     	redirect_to posts_path

@@ -1,5 +1,24 @@
 <h3>Add User</h3><%= button_to "Add a new User", new_user_path, method: :get %>
 <h3>Search Users Here</h3>
+
+<p>
+	<%= form_tag(users_search_path, method: :get) do %>
+		<label>Search User:</label>
+		<%= text_field_tag "search", nil, placeholder: "Type.." %>
+		<%= submit_tag "serach" %>
+	<% end %>
+</p>
+
+<div>
+	<% if @results.present? %>
+		<ul>
+			<% @results.each do |user| %>
+				<li> <strong>Name:</strong><%= link_to user.user_name,user_path(user) %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+
 <h1>Users</h1><hr>
 <table>
 	<% @users.each do |user| %>
