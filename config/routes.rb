@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  
  resources :home
  resources :users
+ resources :posts
  root "home#index"
 
 

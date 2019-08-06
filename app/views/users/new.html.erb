@@ -1,7 +1,20 @@
 <h3>Create a User</h3>
-<%= form_with model: @user do |form| %>
+<%= form_with model: @user,local: true do |form| %>
   <%= form.text_field :user_name, placeholder: "Enter name here.." %>
   <%= form.text_field :user_email, placeholder: "Enter email here.." %>
  
   <%= form.submit %>
 <% end %>
+
+<div>
+	<% if @user.errors.any? %>
+		<div><%= pluralize(@user.errors.count,"error") %></div>
+
+		<ol>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li> <%= msg %> </li>
+			<% end %>
+		</ol>
+	<% end %>
+
+</div>

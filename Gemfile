@@ -68,3 +68,4 @@ gem 'prawn'
 gem "letter_opener", :group => :development
 
 
+gem "paperclip", "~> 5.0.0"

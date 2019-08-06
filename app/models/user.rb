@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+
+	validates :user_name, presence: true
+	validates :user_email, presence: true, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
+	
 	 def self.to_csv
         @users= User.all.order("user_name").limit(50)
 		CSV.generate do |csv|

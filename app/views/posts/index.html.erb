@@ -1,0 +1,14 @@
+<h1>Image Post Room</h1>
+ 
+<%= link_to 'Add Image', new_post_path %><br><hr>
+
+
+<table>
+	<% @posts.each do |post| %>
+    	<tr>
+			<td><%= link_to post.title, post_path(post) %></td>
+			<td><%= image_tag(post.image.url, :size => '30x30') if post.image.exists? %></td>
+			<td><%= button_to 'Remove', post_path(post), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+  	<% end %>
+</table>

@@ -1,8 +1,23 @@
 <h3>Update User Details</h3>
-<%= form_with model: @user do |form| %>
+
+<%= form_with model: @user, local: true do |form| %>
   <%= form.text_field :user_name, placeholder: "name.." %>
   <%= form.text_field :user_email, placeholder: "email.." %>
  
 
   <%= form.submit %>
 <% end %>
+
+<div>
+	<% if @user.errors.any? %>
+		<div><%= pluralize(@user.errors.count,"error") %> prevented this form from submitting.</div>
+
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li> <%= msg %> </li>
+			<% end %>
+		</ul>
+	<% end %>
+
+</div>
+
