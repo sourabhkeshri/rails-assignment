@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
-	validates :user_name, presence: true
-	validates :user_email, presence: true, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
+	validates :user_name, presence: true, uniqueness: true
+	validates :user_email, presence: true, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }, uniqueness: true
 	
 	 def self.to_csv
         @users= User.all.order("user_name").limit(50)
